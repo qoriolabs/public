@@ -1,0 +1,9 @@
+{
+    "name": "aws/test",
+    "info": "/{{.Domain}}/task/aws/test/{{.Id}}",
+    "success": "/{{.Domain}}/task/aws/test/{{.Id}}/success",
+    "error": "/{{.Domain}}/task/aws/test/{{.Id}}/error",
+    "status": "mqtt://iot.eclipse.org:1883/{{.Domain}}/task/aws/test/{{.Id}}",
+    "stdout_topic": "mqtt://iot.eclipse.org:1883/{{.Domain}}/task/aws/test/{{.Id}}/stdout",
+    "stderr_topic": "mqtt://iot.eclipse.org:1883/{{.Domain}}/task/aws/test/{{.Id}}/stderr"
+}

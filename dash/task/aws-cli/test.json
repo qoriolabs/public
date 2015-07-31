@@ -7,6 +7,6 @@
     "stdout_topic": "mqtt://iot.eclipse.org:1883/{{.Domain}}/task/aws/test/{{.Id}}/stdout",
     "stderr_topic": "mqtt://iot.eclipse.org:1883/{{.Domain}}/task/aws/test/{{.Id}}/stderr",
     "print_pre" : "Running AWS EC2 CLI",
-    "print_pre" : "Completed ec2 cli",
+    "print_post" : "Completed ec2 cli",
     "print_err" : "Error on ec2 cli"
 }

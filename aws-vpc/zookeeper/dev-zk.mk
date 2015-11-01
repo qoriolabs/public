@@ -10,7 +10,7 @@ start:
 	-docker stop zk
 	-docker rm zk
 
-run-zk:
+run-zk: start
 	docker run -d --name zk \
 	-p 8080:8080 -p 2181:2181 -p 2888:2888 -p 3888:3888 \
 	-e DASH_IP=$(HOST_IP) \

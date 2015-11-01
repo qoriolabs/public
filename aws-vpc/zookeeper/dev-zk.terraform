@@ -1,0 +1,11 @@
+{
+    "comment" : "config json used by dash/terraform; for dev-zk instances in aws.qoriolabs.com/qor.io vpc",
+    "ensemble":[ 
+    		 { "ip":"10.0.16.50" }, 
+    		 { "ip":"10.0.32.50" }, 
+    		 { "ip":"10.0.48.50" }
+    ],
+    "zookeeper" : {
+    		"comment": "Zookeeper section here to activate zookeeper auto-config."
+    }
+}

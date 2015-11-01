@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_IMAGE=`curl -sSL http://infradash.github.io/public/dash/latest/DOCKER`
+DOCKER_IMAGE="infradash/zookeeper:119"
 CONFIG_URL="http://qoriolabs.github.io/public/aws-vpc/zookeeper/dev-zk.terraform"
 HOSTNAME=`/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $$1}'`
 

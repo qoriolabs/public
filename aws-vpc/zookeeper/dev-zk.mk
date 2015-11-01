@@ -1,5 +1,5 @@
 
-DOCKER_IMAGE:="infradash/zookeeper:119"
+DOCKER_IMAGE:="infradash/zookeeper:122"
 CONFIG_URL:="http://qoriolabs.github.io/public/aws-vpc/zookeeper/dev-zk.terraform"
 HOST_IP:=`/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $$1}'`
 PWD:=`pwd`

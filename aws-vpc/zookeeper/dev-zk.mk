@@ -11,8 +11,13 @@ start:
 	-docker stop zk
 	-docker rm zk
 
-run-zk: start
+myid:
+	echo $(MYID) > $(PWD)/myid
+	echo "Written $(MYID) to myid"
+
+run-zk: start myid
 	docker run -d --name zk \
+	-v $(PWD)/myid:/var/zookeeper/myid \
 	-p 8080:8080 -p 2181:2181 -p 2888:2888 -p 3888:3888 \
 	-e DASH_IP=$(HOST_IP) \
 	-e DASH_NAME=$(HOST_IP) \

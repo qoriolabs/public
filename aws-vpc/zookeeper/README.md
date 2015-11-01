@@ -31,3 +31,35 @@ TODO
 ====
 + Note that `/var/zookeeper/myid` must be generated and mounted to the container.  This is accomplished in the makefile script itself.  A better way is to have a server that looks at the configuration (`.terraform` file) and generate the ssh commands on the fly.
 + 
+
+SSH Setup
+=========
+1. Make sure you have the pem file for ssh to the instances.
+2. Compile `connect.c` proxy (see the `ssh` directory)
+3. Add the following to the config
+```
+####################################
+Host aws.qoriolabs.com
+Hostname bastion.qoriolabs.com
+User ubuntu
+IdentityFile ~/.ssh/id_aws_qoriolabs_com_ops
+DynamicForward 7782
+#-----------------------------------
+Host *.qor.io
+User ubuntu
+IdentityFile ~/.ssh/id_aws_qoriolabs_com_ops
+ProxyCommand connect -S localhost:7782 %h %p
+#-----------------------------------
+Host 10.0.*
+User ubuntu
+IdentityFile ~/.ssh/id_aws_qoriolabs_com_ops
+ProxyCommand connect -S localhost:7782 %h %p
+####################################
+```
+Then run 
+```
+ssh -L 10080:zk01.qor.io:8080 -L 11080:10.0.16.50:8080 aws.qoriolabs.com
+```
+This for example maps the local port 11080 to the remote port 8080 which Exhibitior listens on.
+To see the Exhibitor page, go to http://localhost:11080/exhibitor/v1/ui/index.html
+

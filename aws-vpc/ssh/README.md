@@ -40,5 +40,10 @@ ProxyCommand connect -S localhost:7782 %h %p
 ####################################
 ```
 
+3. Connect: Simply do this 
+```
+ssh ssh -L 10080:zk01.qor.io:8080 -L 11080:10.0.16.50:8080 aws.qoriolabs.com
+```
+This will, for example, do local port forwarding of 11080 to `10.0.6.16.50`.
 
 

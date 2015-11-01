@@ -27,3 +27,7 @@ ssh 10.0.32.50 docker logs -f zk
 ssh 10.0.48.50 docker logs -f zk
 ```
 
+TODO
+====
++ Note that `/var/zookeeper/myid` must be generated and mounted to the container.  This is accomplished in the makefile script itself.  A better way is to have a server that looks at the configuration (`.terraform` file) and generate the ssh commands on the fly.
++ 

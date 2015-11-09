@@ -1,5 +1,5 @@
 DOCKER_IMAGE=infradash/nginx:85
-DASH_DOMAIN=account.qor.io
+DASH_DOMAIN=accounts.qor.io
 DASH_SERVICE=passport-nginx
 CONFIG=http://qoriolabs.github.io/public/aws-vpc/passport/nginx/dash.json
 HOS_IP=`/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $$1}'`

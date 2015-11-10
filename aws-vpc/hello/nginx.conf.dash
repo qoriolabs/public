@@ -1,0 +1,23 @@
+server {
+
+       listen 80;
+       server_name *.qoriolabs.com;
+
+       root /etc/nginx/html;
+
+       # Directive below loads it from url and writes on disk.
+       # {{file "http://qoriolabs.github.io/public/aws-vpc/hello/index.html" "/etc/nginx/html"}}
+       location / {
+       	   try_files $uri $uri/ /index.html;
+       }
+
+       client_max_body_size 1G;
+       keepalive_timeout 10;
+       error_page 403 404 /error.html;
+       error_page 500 502 503 504 /error.html;
+
+       location /error.html {
+           internal;
+	   root /etc/nginx/html;
+       }
+}

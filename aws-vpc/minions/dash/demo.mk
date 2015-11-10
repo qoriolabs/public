@@ -22,7 +22,7 @@ run-dash: start
 	-e DASH_ZK_HOSTS=$(ZKHOSTS) \
 	-e DASH_DOCKER_PORT=unix:///var/run/docker.sock -v /var/run/docker.sock:/var/run/docker.sock \
 	-p 25657:25657 -p 25658:25658 $(DOCKER_IMAGE) \
-	-status_topic=mqtt://ops-dev.blinker.io:1883/ops-dev \
+	-status_topic=mqtt://iot.eclipse.org:1883/demo \
 	-config_url=$(CONFIG) -timeout=30s -enable_ui=true agent
 
 no-config: start

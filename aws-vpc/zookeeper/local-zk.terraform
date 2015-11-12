@@ -1,0 +1,9 @@
+{
+    "comment" : "config json used by dash/terraform; for local / boot2docker development",
+    "ensemble":[ 
+    		 { "ip":"192.168.99.100" }
+    ],
+    "zookeeper" : {
+    		"comment": "Zookeeper section here to activate zookeeper auto-config."
+    }
+}

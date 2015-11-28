@@ -14,12 +14,12 @@ start:
 # Also mount local docker so that it has access to docker daemon for building images, etc.
 run-builder: start
 	echo "Starting up BUILDER image: $(DOCKER_IMAGE)"
-	sudo docker run -d -P --name builder --restart=always \
+	docker run -d -P --name builder --restart=always \
 	-v /var/run/docker.sock:/var/run/docker.sock -v `which docker`:/bin/docker \
 	-e DASH_DOMAIN=$(DASH_DOMAIN) \
 	-e DASH_SERVICE=$(DASH_SERVICE) \
 	-e DASH_VERSION=$(DASH_VERSION) \
 	-e DASH_ZK_HOSTS=$(DASH_ZK_HOSTS) \
-	-e DASH_CONFIG_URL=$(DASH_CONFIG_URL)
+	-e DASH_CONFIG_URL=$(DASH_CONFIG_URL) \
 	$(DOCKER_IMAGE) 
 

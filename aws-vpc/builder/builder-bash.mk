@@ -1,6 +1,6 @@
 DOCKER_IMAGE=infradash/builder:125
 DASH_CONFIG_URL ?= http://qoriolabs.github.io/public/aws-vpc/builder/bash.json
-DASH_ZK_HOSTS = "10.20.110.50:2181,10.20.115.50:2181,10.20.110.51:2181"
+DASH_ZK_HOSTS = "zk01.qor.io:2181,zk02.qor.io:2181,zk03.qor.io:2181"
 HOSTIP ?= `/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $$1}'`
 CONTAINER_NAME ?= builder
 

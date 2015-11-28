@@ -15,7 +15,7 @@ start:
 # Also mount local docker so that it has access to docker daemon for building images, etc.
 run-builder: start
 	echo "Starting up BUILDER image: $(DOCKER_IMAGE)"
-	docker run -d -P --name builder \
+	docker run -d -P --name $(CONTAINER_NAME) \
 	-v /var/run/docker.sock:/var/run/docker.sock -v `which docker`:/bin/docker \
 	-e DASH_DOMAIN=$(DASH_DOMAIN) \
 	-e DASH_SERVICE=$(DASH_SERVICE) \

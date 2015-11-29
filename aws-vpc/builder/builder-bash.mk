@@ -1,4 +1,4 @@
-DOCKER_IMAGE    ?= infradash/builder:125
+DOCKER_IMAGE    ?= infradash/builder:126
 DASH_CONFIG_URL ?= http://qoriolabs.github.io/public/aws-vpc/builder/bash.json
 DASH_ZK_HOSTS   ?= zk01.qor.io:2181,zk02.qor.io:2181,zk03.qor.io:2181
 DASH_NAME       ?= builder

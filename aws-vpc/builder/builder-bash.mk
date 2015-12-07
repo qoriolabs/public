@@ -23,5 +23,5 @@ run-builder: start
 	-e DASH_NAME=$(DASH_NAME) \
 	-e DASH_ZK_HOSTS=$(DASH_ZK_HOSTS) \
 	-e DASH_CONFIG_URL=$(DASH_CONFIG_URL) \
-	$(DOCKER_IMAGE) 
+	$(DOCKER_IMAGE) --ignore_child_process_fails=false
 

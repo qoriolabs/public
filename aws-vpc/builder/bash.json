@@ -28,8 +28,12 @@
     ],
     "mount" : [
 	{
-	    "mount" : "/mnt/zk/dev.qoriolabs.com",
-	    "resource": "zk:///dev.qoriolabs.com"
+	    "mount" : "/mnt/ssl",
+	    "resource": "zk:///code.qor.io/ssl"
+	},
+	{
+	    "mount" : "/mnt/env",
+	    "resource": "zk:///dev.qoriolabs.com/global/env"
 	}
     ]
 }

@@ -24,5 +24,5 @@ run-builder: start
 	-e DASH_ZK_HOSTS=$(DASH_ZK_HOSTS) \
 	-e DASH_CONFIG_URL=$(DASH_CONFIG_URL) \
 	-e DASH_OPTIONS="--ignore_child_process_fails=false --exec_only --daemon --no_source_env --logtostderr" \
-	$(DOCKER_IMAGE) 
+	$(DOCKER_IMAGE) UPGRADE
 

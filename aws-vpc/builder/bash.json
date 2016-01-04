@@ -19,7 +19,7 @@
     "config": [
 	{
 	    "init": true,
-            "url": "http://qoriolabs.github.io/public/builder/bash.conf",
+            "url": "http://qoriolabs.github.io/public/aws-vpc/builder/bash.conf",
             "path": "./bash-{{.id}}.conf"
 	}
     ],
